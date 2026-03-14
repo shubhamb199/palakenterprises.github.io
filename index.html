@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palak Enterprises | Premium Solutions</title>
+    <title>Palak Enterprises | Premium Manpower & Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* --- PREMIUM CSS --- */
@@ -65,7 +65,7 @@
         }
         .hero h1 { font-size: 4rem; line-height: 1.2; margin-bottom: 1.5rem; }
         .hero h1 span { background: linear-gradient(to right, #fff, var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2.5rem; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 2.5rem; }
         .btn-primary {
             padding: 1rem 2.5rem; font-size: 1rem; font-weight: 600; color: var(--bg-color);
             background: linear-gradient(45deg, var(--accent-gold), #ffdf73);
@@ -80,7 +80,7 @@
         .section-header { text-align: center; margin-bottom: 4rem; }
         .section-header h2 { font-size: 2.5rem; color: var(--text-primary); }
         .section-header span { color: var(--accent-cyan); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .service-card {
             background: var(--surface-color); border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 15px; padding: 3rem 2rem; transition: transform 0.4s ease, background 0.4s ease;
@@ -105,7 +105,32 @@
         /* Footer */
         footer { background: #06090f; padding: 4rem 5%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
         footer p { color: var(--text-secondary); margin-bottom: 0.5rem; }
-        footer .gold-text { color: var(--accent-gold); font-weight: 600; }
+        footer .gold-text { color: var(--accent-gold); font-weight: 600; font-size: 1.2rem; margin-top: 10px; }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.5);
+        }
+        .whatsapp-float svg { width: 35px; height: 35px; fill: white; }
 
         /* Animations */
         .reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
@@ -115,6 +140,8 @@
             .impact-section { flex-direction: column-reverse; text-align: center; }
             .hero h1 { font-size: 2.5rem; }
             nav ul { display: none; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+            .whatsapp-float svg { width: 28px; height: 28px; }
         }
     </style>
 </head>
@@ -132,54 +159,65 @@
     </header>
 
     <section id="home" class="hero">
-        <h1 class="reveal">Engineering Success Through <span>People & Projects</span></h1>
-        <p class="reveal">Elite manpower supply and comprehensive project execution tailored for modern industries. We deliver precision, scale, and reliability.</p>
+        <h1 class="reveal">Engineering Success Through <span>Expert People & Specialized Projects</span></h1>
+        <p class="reveal">From industrial acid cleaning to supplying certified technical and support staff, Palak Enterprises delivers the reliability your company needs to operate smoothly.</p>
         <a href="#contact" class="btn-primary reveal">Partner With Us</a>
     </section>
 
     <section id="services" class="services-section">
         <div class="section-header reveal">
             <h2>Our Core <span>Expertise</span></h2>
-            <p style="color: var(--text-secondary); margin-top: 10px;">Strategic solutions designed for operational excellence.</p>
+            <p style="color: var(--text-secondary); margin-top: 10px;">Tailored operational and staffing solutions for modern industry.</p>
         </div>
         <div class="services-grid">
             <div class="service-card reveal">
-                <h3 style="color: var(--accent-cyan);">01. Specialized Manpower</h3>
-                <p>Deploying highly vetted, skilled professionals perfectly mapped to your technical and operational requirements. We handle the complex compliance and sourcing so you can focus on scaling.</p>
+                <h3 style="color: var(--accent-cyan);">01. Industrial Acid Cleaning & Projects</h3>
+                <p>We execute specialized industrial chemical and acid cleaning projects. Our trained team safely removes heavy scale, rust, and mineral deposits from industrial equipment, ensuring your machinery runs efficiently while strictly following safety protocols.</p>
             </div>
             <div class="service-card reveal">
-                <h3 style="color: var(--accent-gold);">02. Turnkey Project Work</h3>
-                <p>From architectural logic to final execution, we take total ownership. Our robust project management methodologies ensure milestones are achieved on time and completely within scope.</p>
+                <h3 style="color: var(--accent-gold);">02. Skilled Technical Manpower</h3>
+                <p>We supply highly trained tradespeople tailored to your manufacturing or operational needs. We provide certified Welders, Fitters, and Electricians who are vetted, experienced, and ready to integrate directly into your workflow.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3 style="color: #4CAF50;">03. Facility Support Staff</h3>
+                <p>Keep your daily operations in perfect condition. We provide reliable and hardworking personnel for Housekeeping, Gardening, and general Helpers to support your site's ongoing maintenance and logistics.</p>
             </div>
         </div>
     </section>
 
     <section class="impact-section reveal">
         <div class="impact-content">
-            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Precision in <span style="color: var(--accent-gold);">Manpower</span></h2>
-            <p>Our manpower division isn't just about staffing; it's about strategic alignment. We source specialists who integrate seamlessly into your company culture and technical workflows. Quality is our default.</p>
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Precision in <span style="color: var(--accent-gold);">Industrial Execution</span></h2>
+            <p>Whether it is maintaining critical infrastructure through acid cleaning or deploying expert welders and fitters, we handle the complex, hands-on work so you can focus on business growth.</p>
         </div>
         <div class="impact-image-container">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Skilled technician working on-site">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Industrial welder working with precision">
         </div>
     </section>
 
     <section class="impact-section reveal" style="background-color: #06090f; border-radius: 20px; padding: 4rem;">
         <div class="impact-image-container">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Large scale engineering project in progress">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Clean and maintained industrial facility">
         </div>
         <div class="impact-content" style="padding-left: 2rem;">
-            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Ownership in <span style="color: var(--accent-cyan);">Projects</span></h2>
-            <p>We redefine turnkey. Our project work covers the critical spectrum from initial planning and logistics to full-scale execution. We don't just complete projects; we engineer successful outcomes on every metric.</p>
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Reliable Support for <span style="color: var(--accent-cyan);">Every Facility</span></h2>
+            <p>A great company runs on the strength of its support system. We source dedicated helpers, housekeeping staff, and groundskeepers who take pride in maintaining a safe, clean, and efficient working environment for your team.</p>
         </div>
     </section>
 
     <footer id="contact" class="reveal">
         <h2 style="margin-bottom: 1.5rem;">Ready to elevate your operations?</h2>
-        <p class="gold-text">info@palakenterprises.com</p>
-        <p>Pune, Maharashtra, India</p>
+        <p>Get in touch with us today for a consultation.</p>
+        <p class="gold-text">📞 +91 9075991274</p>
+        <p style="margin-top: 10px;">📍 Jejuri, Pune, Maharashtra, India</p>
         <p style="margin-top: 3rem; font-size: 0.85rem; opacity: 0.5;">&copy; 2026 Palak Enterprises. Designed for Excellence.</p>
     </footer>
+
+    <a href="https://wa.me/919075991274" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.653.864 5.111 2.333 7.15L.716 24l4.98-1.594A11.968 11.968 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 22.012c-2.185 0-4.22-.57-6.002-1.564l-.43-.238-3.418 1.094 1.116-3.328-.261-.415A9.975 9.975 0 011.989 12.03c0-5.544 4.512-10.055 10.042-10.055 5.531 0 10.043 4.511 10.043 10.055 0 5.544-4.512 10.056-10.043 10.056zm5.518-7.545c-.302-.152-1.789-.884-2.065-.986-.277-.101-.478-.152-.68.152-.201.303-.781.986-.957 1.188-.176.202-.352.227-.654.076-.303-.152-1.275-.47-2.431-1.503-.9-1.025-1.506-2.292-1.682-2.595-.176-.303-.018-.466.133-.618.136-.136.302-.353.454-.53.151-.176.202-.303.303-.504.101-.202.05-.38-.025-.531-.076-.152-.68-1.641-.932-2.247-.245-.591-.495-.51-.68-.52-.175-.008-.377-.008-.579-.008-.201 0-.528.076-.805.378-.277.303-1.056 1.033-1.056 2.52s1.082 2.923 1.233 3.125c.151.202 2.131 3.251 5.161 4.558.72.311 1.282.497 1.723.636.723.23 1.382.197 1.901.12.582-.086 1.789-.731 2.04-1.438.252-.707.252-1.312.176-1.438-.076-.126-.277-.202-.579-.353z"/>
+        </svg>
+    </a>
 
     <script>
         function reveal() {
