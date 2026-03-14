@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palak Enterprises | Premium Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- PREMIUM CSS --- */
+        :root {
+            --bg-color: #0b0f19;
+            --surface-color: rgba(255, 255, 255, 0.05);
+            --accent-gold: #d4af37;
+            --accent-cyan: #00e5ff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aabf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: var(--accent-gold); }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.3s ease; }
+        nav a:hover { color: var(--accent-cyan); }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.1), transparent 40%);
+        }
+        .hero h1 { font-size: 4rem; line-height: 1.2; margin-bottom: 1.5rem; }
+        .hero h1 span { background: linear-gradient(to right, #fff, var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin-bottom: 2.5rem; }
+        .btn-primary {
+            padding: 1rem 2.5rem; font-size: 1rem; font-weight: 600; color: var(--bg-color);
+            background: linear-gradient(45deg, var(--accent-gold), #ffdf73);
+            border: none; border-radius: 50px; cursor: pointer; text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4); }
+
+        /* Services */
+        .services-section { padding: 8rem 5%; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; color: var(--text-primary); }
+        .section-header span { color: var(--accent-cyan); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .service-card {
+            background: var(--surface-color); border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px; padding: 3rem 2rem; transition: transform 0.4s ease, background 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+        .service-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: var(--accent-cyan); }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .service-card p { color: var(--text-secondary); line-height: 1.7; }
+
+        /* Impact Sections (Images) */
+        .impact-section { padding: 6rem 5%; display: flex; align-items: center; justify-content: space-between; gap: 4rem; max-width: 1200px; margin: 0 auto; }
+        .impact-content { flex: 1; color: var(--text-secondary); }
+        .impact-image-container { flex: 1; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+        .impact-image-container img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
+        .impact-image-container:hover img { transform: scale(1.05); }
+        .impact-image-container::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), transparent); opacity: 0; transition: opacity 0.5s ease;
+        }
+        .impact-image-container:hover::after { opacity: 1; }
+
+        /* Footer */
+        footer { background: #06090f; padding: 4rem 5%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        footer p { color: var(--text-secondary); margin-bottom: 0.5rem; }
+        footer .gold-text { color: var(--accent-gold); font-weight: 600; }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 900px) {
+            .impact-section { flex-direction: column-reverse; text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Palak<span>Enterprises</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Expertise</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 class="reveal">Engineering Success Through <span>People & Projects</span></h1>
+        <p class="reveal">Elite manpower supply and comprehensive project execution tailored for modern industries. We deliver precision, scale, and reliability.</p>
+        <a href="#contact" class="btn-primary reveal">Partner With Us</a>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="section-header reveal">
+            <h2>Our Core <span>Expertise</span></h2>
+            <p style="color: var(--text-secondary); margin-top: 10px;">Strategic solutions designed for operational excellence.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <h3 style="color: var(--accent-cyan);">01. Specialized Manpower</h3>
+                <p>Deploying highly vetted, skilled professionals perfectly mapped to your technical and operational requirements. We handle the complex compliance and sourcing so you can focus on scaling.</p>
+            </div>
+            <div class="service-card reveal">
+                <h3 style="color: var(--accent-gold);">02. Turnkey Project Work</h3>
+                <p>From architectural logic to final execution, we take total ownership. Our robust project management methodologies ensure milestones are achieved on time and completely within scope.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-section reveal">
+        <div class="impact-content">
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Precision in <span style="color: var(--accent-gold);">Manpower</span></h2>
+            <p>Our manpower division isn't just about staffing; it's about strategic alignment. We source specialists who integrate seamlessly into your company culture and technical workflows. Quality is our default.</p>
+        </div>
+        <div class="impact-image-container">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Skilled technician working on-site">
+        </div>
+    </section>
+
+    <section class="impact-section reveal" style="background-color: #06090f; border-radius: 20px; padding: 4rem;">
+        <div class="impact-image-container">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Large scale engineering project in progress">
+        </div>
+        <div class="impact-content" style="padding-left: 2rem;">
+            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Ownership in <span style="color: var(--accent-cyan);">Projects</span></h2>
+            <p>We redefine turnkey. Our project work covers the critical spectrum from initial planning and logistics to full-scale execution. We don't just complete projects; we engineer successful outcomes on every metric.</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="reveal">
+        <h2 style="margin-bottom: 1.5rem;">Ready to elevate your operations?</h2>
+        <p class="gold-text">info@palakenterprises.com</p>
+        <p>Pune, Maharashtra, India</p>
+        <p style="margin-top: 3rem; font-size: 0.85rem; opacity: 0.5;">&copy; 2026 Palak Enterprises. Designed for Excellence.</p>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
+
+</body>
+</html>
