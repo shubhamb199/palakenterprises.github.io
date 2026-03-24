@@ -3,237 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palak Enterprises | Premium Manpower & Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Palak Enterprises | Manpower & Industrial Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- PREMIUM CSS --- */
+        /* CSS Variables for easy color changes */
         :root {
-            --bg-color: #0b0f19;
-            --surface-color: rgba(255, 255, 255, 0.05);
-            --accent-gold: #d4af37;
-            --accent-cyan: #00e5ff;
-            --text-primary: #ffffff;
-            --text-secondary: #a0aabf;
+            --gold: #D4AF37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-light: #f4f4f4;
+            --accent: #00ffff; /* Cyan accent from your previous site */
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: var(--text-light); }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
+        /* Navigation */
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 5%;
+            background: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--gold);
         }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: 1px; }
-        .logo span { color: var(--accent-gold); }
-        nav ul { list-style: none; display: flex; gap: 2rem; }
-        nav a { color: var(--text-secondary); text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: color 0.3s ease; }
-        nav a:hover { color: var(--accent-cyan); }
+        .logo img { height: 60px; width: auto; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li a { color: white; text-decoration: none; margin-left: 25px; font-weight: 500; transition: 0.3s; }
+        .nav-links li a:hover { color: var(--gold); }
 
-        /* Hero */
+        /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200');
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 5%;
-            background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.1), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.1), transparent 40%);
+            padding: 20px;
         }
-        .hero h1 { font-size: 4rem; line-height: 1.2; margin-bottom: 1.5rem; }
-        .hero h1 span { background: linear-gradient(to right, #fff, var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 2.5rem; }
-        .btn-primary {
-            padding: 1rem 2.5rem; font-size: 1rem; font-weight: 600; color: var(--bg-color);
-            background: linear-gradient(45deg, var(--accent-gold), #ffdf73);
-            border: none; border-radius: 50px; cursor: pointer; text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        .hero h1 { font-size: 3.5rem; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 30px; }
+        .btn { 
+            padding: 15px 35px; 
+            background: var(--gold); 
+            color: black; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 5px; 
+            transition: 0.3s;
         }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4); }
+        .btn:hover { background: white; transform: scale(1.05); }
 
-        /* Services */
-        .services-section { padding: 8rem 5%; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-size: 2.5rem; color: var(--text-primary); }
-        .section-header span { color: var(--accent-cyan); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .service-card {
-            background: var(--surface-color); border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 15px; padding: 3rem 2rem; transition: transform 0.4s ease, background 0.4s ease;
-            backdrop-filter: blur(5px);
-        }
-        .service-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: var(--accent-cyan); }
-        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); }
-        .service-card p { color: var(--text-secondary); line-height: 1.7; }
+        /* Content Containers */
+        .container { padding: 80px 10% 40px; text-align: center; }
+        h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 40px; position: relative; }
+        h2::after { content: ''; width: 60px; height: 3px; background: var(--accent); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
-        /* Impact Sections (Images) */
-        .impact-section { padding: 6rem 5%; display: flex; align-items: center; justify-content: space-between; gap: 4rem; max-width: 1200px; margin: 0 auto; }
-        .impact-content { flex: 1; color: var(--text-secondary); }
-        .impact-image-container { flex: 1; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
-        .impact-image-container img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
-        .impact-image-container:hover img { transform: scale(1.05); }
-        .impact-image-container::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), transparent); opacity: 0; transition: opacity 0.5s ease;
-        }
-        .impact-image-container:hover::after { opacity: 1; }
+        /* About Section */
+        .about-text { font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        /* Footer */
-        footer { background: #06090f; padding: 4rem 5%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        footer p { color: var(--text-secondary); margin-bottom: 0.5rem; }
-        footer .gold-text { color: var(--accent-gold); font-weight: 600; font-size: 1.2rem; margin-top: 10px; }
+        /* Services Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: var(--card-bg); padding: 40px 20px; border-radius: 10px; border: 1px solid #333; transition: 0.4s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .card i { font-size: 50px; color: var(--gold); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; color: var(--accent); }
 
-        /* WhatsApp Floating Button */
+        /* Why Choose Us */
+        .why-us { background: #111; padding-bottom: 80px; }
+        .why-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .why-item { flex: 1 1 300px; background: var(--dark-bg); padding: 25px; border-left: 4px solid var(--gold); text-align: left; }
+
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
         }
-        .whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.5);
-        }
-        .whatsapp-float svg { width: 35px; height: 35px; fill: white; }
 
-        /* Animations */
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 900px) {
-            .impact-section { flex-direction: column-reverse; text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
-            nav ul { display: none; }
-            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-            .whatsapp-float svg { width: 28px; height: 28px; }
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hide links for simple mobile view */
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .container { padding: 50px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">Palak<span>Enterprises</span></a>
+    <header class="navbar">
+        <div class="logo">
+            <img src="palaklogo.svg" alt="Palak Enterprises">
+        </div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Expertise</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
-        <h1 class="reveal">Engineering Success Through <span>Expert People & Specialized Projects</span></h1>
-        <p class="reveal">From industrial acid cleaning to supplying certified technical and support staff, Palak Enterprises delivers the reliability your company needs to operate smoothly.</p>
-        <a href="#contact" class="btn-primary reveal">Partner With Us</a>
+        <h1>Palak Enterprises</h1>
+        <p>Premier Manpower Solutions & Industrial Project Work in Jejuri, Pune.</p>
+        <a href="https://wa.me/919273764024" class="btn">DISCUSS YOUR PROJECT</a>
     </section>
 
-    <section id="services" class="services-section">
-        <div class="section-header reveal">
-            <h2>Our Core <span>Expertise</span></h2>
-            <p style="color: var(--text-secondary); margin-top: 10px;">Tailored operational and staffing solutions for modern industry.</p>
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <div class="about-text">
+            Based in <strong>Jejuri, Pune</strong>, Palak Enterprises specializes in bridging the gap between industries and skilled technical talent. From high-precision <strong>Industrial Acid Cleaning</strong> to providing disciplined teams of Welders and Fitters, we drive industrial efficiency with safety.
         </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <h3 style="color: var(--accent-cyan);">01. Industrial Acid Cleaning & Projects</h3>
-                <p>We execute specialized industrial chemical and acid cleaning projects. Our trained team safely removes heavy scale, rust, and mineral deposits from industrial equipment, ensuring your machinery runs efficiently while strictly following safety protocols.</p>
+    </section>
+
+    <section id="services" class="container" style="background: #0f0f0f;">
+        <h2>Our Core Services</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-users-cog"></i>
+                <h3>Technical Manpower</h3>
+                <p>Expert Welders, Fitters, and Electricians vetted for industrial discipline.</p>
             </div>
-            <div class="service-card reveal">
-                <h3 style="color: var(--accent-gold);">02. Skilled Technical Manpower</h3>
-                <p>We supply highly trained tradespeople tailored to your manufacturing or operational needs. We provide certified Welders, Fitters, and Electricians who are vetted, experienced, and ready to integrate directly into your workflow.</p>
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Acid Cleaning</h3>
+                <p>Specialized chemical cleaning for industrial boilers and pipelines.</p>
             </div>
-            <div class="service-card reveal">
-                <h3 style="color: #4CAF50;">03. Facility Support Staff</h3>
-                <p>Keep your daily operations in perfect condition. We provide reliable and hardworking personnel for Housekeeping, Gardening, and general Helpers to support your site's ongoing maintenance and logistics.</p>
+            <div class="card">
+                <i class="fas fa-shimmer"></i>
+                <h3>Facility Management</h3>
+                <p>Quality Housekeeping, Gardening, and General Helper services.</p>
             </div>
         </div>
     </section>
 
-    <section class="impact-section reveal">
-        <div class="impact-content">
-            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Precision in <span style="color: var(--accent-gold);">Industrial Execution</span></h2>
-            <p>Whether it is maintaining critical infrastructure through acid cleaning or deploying expert welders and fitters, we handle the complex, hands-on work so you can focus on business growth.</p>
-        </div>
-        <div class="impact-image-container">
-            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Industrial welder working with precision">
-        </div>
-    </section>
-
-    <section class="impact-section reveal" style="background-color: #06090f; border-radius: 20px; padding: 4rem;">
-        <div class="impact-image-container">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Clean and maintained industrial facility">
-        </div>
-        <div class="impact-content" style="padding-left: 2rem;">
-            <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1.5rem;">Reliable Support for <span style="color: var(--accent-cyan);">Every Facility</span></h2>
-            <p>A great company runs on the strength of its support system. We source dedicated helpers, housekeeping staff, and groundskeepers who take pride in maintaining a safe, clean, and efficient working environment for your team.</p>
+    <section class="container why-us">
+        <h2>Why Choose Us?</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <p><strong>Verified Workforce:</strong> Vetted professionals for reliability.</p>
+            </div>
+            <div class="why-item">
+                <p><strong>Local Presence:</strong> Fast deployment within the Pune region.</p>
+            </div>
+            <div class="why-item">
+                <p><strong>Safety-First:</strong> Zero-compromise execution on all projects.</p>
+            </div>
         </div>
     </section>
 
-    <footer id="contact" class="reveal">
-        <h2 style="margin-bottom: 1.5rem;">Ready to elevate your operations?</h2>
-        <p>Get in touch with us today for a consultation.</p>
-        <p class="gold-text">📞 +91 9075991274</p>
-        <p style="margin-top: 10px;">📍 Jejuri, Pune, Maharashtra, India</p>
-        <p style="margin-top: 3rem; font-size: 0.85rem; opacity: 0.5;">&copy; 2026 Palak Enterprises. Designed for Excellence.</p>
+    <footer id="contact" class="container">
+        <p>Jejuri, Pune, Maharashtra | Contact: +91 9273764024</p>
+        <p style="margin-top: 20px; color: #555;">© 2026 Palak Enterprises. Created by Shubham Bhapkar.</p>
     </footer>
 
-    <a href="https://wa.me/919075991274" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24">
-            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.653.864 5.111 2.333 7.15L.716 24l4.98-1.594A11.968 11.968 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 22.012c-2.185 0-4.22-.57-6.002-1.564l-.43-.238-3.418 1.094 1.116-3.328-.261-.415A9.975 9.975 0 011.989 12.03c0-5.544 4.512-10.055 10.042-10.055 5.531 0 10.043 4.511 10.043 10.055 0 5.544-4.512 10.056-10.043 10.056zm5.518-7.545c-.302-.152-1.789-.884-2.065-.986-.277-.101-.478-.152-.68.152-.201.303-.781.986-.957 1.188-.176.202-.352.227-.654.076-.303-.152-1.275-.47-2.431-1.503-.9-1.025-1.506-2.292-1.682-2.595-.176-.303-.018-.466.133-.618.136-.136.302-.353.454-.53.151-.176.202-.303.303-.504.101-.202.05-.38-.025-.531-.076-.152-.68-1.641-.932-2.247-.245-.591-.495-.51-.68-.52-.175-.008-.377-.008-.579-.008-.201 0-.528.076-.805.378-.277.303-1.056 1.033-1.056 2.52s1.082 2.923 1.233 3.125c.151.202 2.131 3.251 5.161 4.558.72.311 1.282.497 1.723.636.723.23 1.382.197 1.901.12.582-.086 1.789-.731 2.04-1.438.252-.707.252-1.312.176-1.438-.076-.126-.277-.202-.579-.353z"/>
-        </svg>
+    <a href="https://wa.me/919273764024" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
-
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
-    </script>
 
 </body>
 </html>
